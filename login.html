@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+        <title>安徽耐特嘉--登录页面</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+              <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            *{margin:0; padding:0;}
+            body{background-image:url("image/bg.jpg");background-size:cover; background-repeat: no-repeat;}
+            .cont{
+                position:absolute;
+                top:250px;
+                left:40%;
+                width:350px;
+                height:250px;
+            }
+            input{margin-left:0;}
+            input.username,input.password{border:0;width:200px;color:white;height:30px;line-height:25px;font-size:20px;background:rgba(128,128,128,.3);}
+            form{font-size:20px; color:white;}
+            input[type=submit]{width:85px;height:40px;color:white;font-size:20px;margin-left:35%;border:0;border-radius:10px;background:rgba(128,128,128,.7);}
+
+            /*input[type=submit]::-moz-focus-inner{outline:0;}*/
+            input[type=submit]:focus{outline: none;}
+
+
+        </style>
+    </head>
+    <body style="padding-top:55px;">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+            <div class="container" style="margin-left: 200px;">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="#"><img src="image/logo.png" style="width:180;height: 40px;position: absolute;top: 5px;left: 22px;" alt="logo"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">关于我们<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">产品特色</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">平台优势<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">精英团队打造</a></li>
+                                <li><a href="#">后端性能优越</a></li>
+                                <li><a href="#">顶尖技术整合</a></li>
+                                <li role="seperator" class="divider"></li>
+                                <li><a href="#">开发快速灵活</a></li>
+                                <li><a href="#">全套安全方案</a></li>
+                                <li><a href="#">二次开发方便</a></li>
+                                <li role="seperator" class="divider"></li>
+                                <li><a href="#">部署迁移自由</a></li>
+                                <li><a href="#">前端全终端适配</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">服务简介</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+
+        <div class="cont">
+            <form id="form" action="https://www.baidu.com">
+                <!-- 用户名:
+                <input type="text" class="username" id="input_text" /></br></br> -->
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">用户名</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="username">
+                </div>
+
+                <!-- 密　码:
+                <input type="password" class="password" id="input_text" /> -->
+
+                <div class="input-group" style="margin-top: 5px;">
+                    <span class="input-group-addon" id="basic-addon1">密　码</span>
+                    <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password">
+                </div>
+
+                <a href="#" style="display:block;position:absolute;right:0;font-size:14px;">忘记密码</a></br>
+                <input type="submit" class="btn btn-danger" value="登录" data-loading-text="正在登录" />
+
+            </form>
+        </div>
+
+
+
+
+        <script src="js/jquery.min.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $("#form").submit(function () {
+                var $btn = $('input[type=submit]');
+                $btn.button("loading");
+                $.ajax({
+                    type: "post",
+                    url: "login",
+                    data: $(this).serialize()
+                });
+                return false;
+            });
+        </script>
+
+    </body>
+</html>

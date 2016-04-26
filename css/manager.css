@@ -1,0 +1,67 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-size: 14px;
+	font-family: "宋体","微软雅黑","sans-serif";
+}
+nav{
+	display: block;
+}
+.welcome{
+	position: relative;
+	margin-top: 50px;
+	width: 100%;
+	height: 20px;
+	background: lightgray;
+}
+p[class=run]{
+	width: 200px;
+	height: 20px;
+	position: absolute;
+	animation: mymove 30s linear alternate infinite;
+	-moz-animation: mymove 30s linear alternate infinite;
+	-o-animation: mymove 30s linear alternate infinite;
+	-webkit-animation: mymove 30s linear alternate infinite;
+	-ms-animation: mymove 30s linear alternate infinite;
+}
+@keyframes mymove{
+	0%{left: 0;}
+	100%{left: 1166px;}
+}
+@-webkit-keyframes mymove{
+	0%{left: 0;}
+	100%{left: 1166px;}
+}
+@-moz-keyframes mymove{
+	0%{left: 0;}
+	100%{left: 1166px;}
+}
+@-o-keyframes mymove{
+	0%{left: 0;}
+	100%{left: 1166px;}
+}
+@-ms-keyframes mymove{
+	0%{left: 0;}
+	100%{left: 1166px;}
+}
+
+aside{
+	display: block;
+	float: left;
+	width: 200px;
+	height:500px;
+	box-shadow: 1px -1px 5px gray;
+}
+aside a:focus{
+	outline: none;
+}
+aside a:active{
+	outline:1px dotted gray;
+}
+.left{
+	float: left;
+	height: 550px;
+	width: 1130px;
+}
